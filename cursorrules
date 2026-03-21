@@ -1,0 +1,52 @@
+# SoundScope — Project Rules
+# Cursor reads this file automatically every session. Do not paste it manually.
+
+## What This Is
+A personal desktop music discovery app for one user with narrow taste (trip-hop, chillhop, downtempo, dream hop, nu jazz, organic electronic). Two halves: a polished Spotify-dark player UI, and an advanced data pipeline dashboard. Single user, no auth, desktop only, Windows ARM (Surface Laptop 7).
+
+## Tech Stack — LOCKED, DO NOT CHANGE
+- **Desktop:** Electron via `electron-vite` using the `electron-vite-react` template (https://github.com/electron-vite/electron-vite-react)
+- **Frontend:** React 18 + TypeScript strict mode + Tailwind CSS
+- **Database:** SQLite via `better-sqlite3` (v12.8+ has win32-arm64 prebuilts for Electron). Set WAL mode on connection.
+- **Settings storage:** `electron-store` for API keys and user preferences. NOT .env at runtime.
+- **Scraping static HTML:** `cheerio` + `node-fetch`
+- **Scraping JS-rendered SPAs:** `playwright` with Chromium only (Mixcloud, Bandcamp are React SPAs — cheerio cannot see their content)
+- **LLM extraction:** `@anthropic-ai/sdk` for Claude (agentic extraction from messy text), `@google/generative-ai` for Gemini Flash (bulk/cheap tasks)
+- **YouTube playback:** Electron `WebContentsView` — NOT BrowserView (deprecated), NOT IFrame (CSP issues in Electron)
+- **All code:** TypeScript. No Python. No separate backend.
+
+## Coding Rules — ALWAYS FOLLOW
+1. TypeScript strict mode. No `any` unless absolutely unavoidable (comment why).
+2. All DB access via query functions in `src/main/lib/db/queries/`. Never raw SQL in components or IPC handlers.
+3. All external API calls go through dedicated client modules that check `isMockMode(keyName)` and return mock data when keys are missing/placeholder.
+4. Every pipeline step implements the `PipelineStep` interface from `src/main/lib/pipeline/types.ts`. No exceptions.
+5. IPC for ALL main↔renderer communication. Never import Node modules in renderer code.
+6. Rate limiters on every external API call. Every. Single. One.
+7. Every component handles the empty/loading/error states explicitly. No blank screens, no unhandled promises, no crashes on null data.
+8. `skipProcessed: true` as default on all pipeline steps — subsequent runs only process NEW items.
+
+## Design System — LOCKED
+- Dark mode ONLY
+- Backgrounds: #121212 (base), #1a1a1a (surface), #242424 (elevated), #2a2a2a (hover)
+- Text: #ffffff (primary), #b3b3b3 (secondary), #727272 (muted)
+- Accent primary: #1DB954 (Spotify green — primary actions, like button)
+- Accent secondary: #E8A838 (warm amber — recommendation signals, badges)
+- Accent danger: #E84855 (dislike, errors)
+- Accent info: #4A9FD9 (info badges)
+- Fonts: DM Sans (body 14px), Outfit (headings), JetBrains Mono (pipeline logs 12px)
+- Transitions: 150ms ease everywhere
+- Album art: 8px border-radius, subtle shadow
+- Cards: bg-surface with shadow-sm, hover:bg-hover with scale(1.01)
+
+## Critical Behaviors — NON-NEGOTIABLE
+1. **Mock mode.** If an API key is empty or "PLACEHOLDER", return realistic hardcoded mock data. The ENTIRE app must work with zero real API keys.
+2. **"Why recommended" on every track.** Every track card and Now Playing view shows which signals contributed and their evidence. This is not optional.
+3. **Pipeline fault tolerance.** Steps save progress after every item. Partial completion is normal. Resume from checkpoint. Rate limit hits → automatic exponential backoff, not failure.
+4. **Settings via electron-store.** Settings UI reads/writes electron-store. Pipeline steps read from electron-store. The .env file is development convenience only.
+5. **YouTube IDs resolve on-demand.** When user clicks play, NOT in batch pipeline runs. Cache forever after first lookup. Each YouTube search costs 100 API quota units — budget is 100 searches/day.
+6. **Cost tracking.** Every LLM API call logs token count and estimated USD cost. Pipeline dashboard shows running total. Warn at $10/run.
+7. **Signals are modular.** Each scoring signal is independent. Missing data source → that signal returns null → excluded from composite score. App works with 1 signal or 8.
+8. **Empty states everywhere.** Every page, every list, every component handles zero-data gracefully with contextual help text.
+
+## Reference
+Full database schema, pipeline definitions, scraping methods, LLM prompts, UI layouts, and scoring engine specs are in `.soundscope-spec.md`. Read the relevant section before building each feature.
