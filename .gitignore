@@ -1,0 +1,2 @@
+# Local devcontainer overrides (X11, secrets) — do not commit
+.devcontainer/devcontainer.local.json

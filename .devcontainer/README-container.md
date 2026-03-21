@@ -20,33 +20,44 @@
 
 ---
 
-## Running Electron (GUI window)
+## Display / Electron (important)
 
-Electron needs a display. You have two options:
+### Default (Docker Desktop on Windows & macOS)
 
-### Option A — Forward display from WSL2 (recommended on Windows)
+The devcontainer **does not** mount `/tmp/.X11-unix` from the host. On Windows that path does not exist and **Docker fails to start the container** if you try to bind it.
 
-1. Install [VcXsrv](https://sourceforge.net/projects/vcxsrv/) or [X410](https://x410.app/) on Windows
-2. Launch your X server with "Disable access control" checked
-3. In WSL2 terminal, find your host IP:
-   ```bash
-   export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
-   ```
-4. Set the same `DISPLAY` in your shell before opening VS Code, or add it to `~/.bashrc`
-5. The devcontainer will pick it up via `${localEnv:DISPLAY}`
+Instead, `DISPLAY=:99` and **`postStart` starts Xvfb** inside the container. Electron runs against that virtual display.
 
-Then inside the container:
-```bash
-npm run dev
-```
+- You typically **won’t see a window** on your Windows desktop — the app is running inside the container’s framebuffer. Use this for builds, tests, and headless pipeline work.
+- To watch the UI, use **Option B** below or run the app on the host after syncing the repo.
 
-### Option B — Headless with Xvfb (no host display needed)
+### Option A — One-off: `xvfb-run`
 
 ```bash
 xvfb-run --auto-servernum npm run dev
 ```
 
-This opens a virtual framebuffer — no window appears but the app runs. Useful for testing and pipeline runs that don't need the GUI.
+### Option B — Show Electron on your machine (Linux host or advanced)
+
+Create **`.devcontainer/devcontainer.local.json`** (gitignored) next to `devcontainer.json` and override, for example on **Linux** with a local X server:
+
+```json
+{
+  "containerEnv": {
+    "DISPLAY": "${localEnv:DISPLAY}"
+  },
+  "mounts": [
+    "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind"
+  ],
+  "runArgs": ["--network=host"]
+}
+```
+
+On **Windows** with VcXsrv / X410, forwarding X from the container to the host is more involved (often WSL2 + `DISPLAY` to the Windows host IP). Prefer the default Xvfb workflow unless you specifically need a visible window.
+
+### Troubleshooting: “Error setting up the container” / `docker run` failed
+
+If logs show a **bind mount** to `/tmp/.X11-unix`, that was the old config. Pull the latest `.devcontainer/devcontainer.json` (no `mounts`), then **Rebuild Container**: `Ctrl+Shift+P` → **Dev Containers: Rebuild Container**.
 
 ---
 
