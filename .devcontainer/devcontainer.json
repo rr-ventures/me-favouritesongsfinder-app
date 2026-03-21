@@ -1,0 +1,60 @@
+{
+  "name": "SoundScope",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+
+  // Forward Electron's display via X11 or Wayland on the host.
+  // On Windows with WSL2, set DISPLAY=:0 in your WSL environment
+  // and install VcXsrv or X410 on the Windows host.
+  "containerEnv": {
+    "DISPLAY": "${localEnv:DISPLAY}",
+    "ELECTRON_DISABLE_SANDBOX": "1"
+  },
+
+  "mounts": [
+    // Share host X11 socket for Electron window rendering
+    "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached"
+  ],
+
+  "features": {
+    // Nothing extra — Node + build tools are all in the Dockerfile
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "ms-vscode.vscode-typescript-next",
+        "Orta.vscode-twoslash-queries",
+        "eamodio.gitlens",
+        "PKief.material-icon-theme"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "typescript.tsdk": "node_modules/typescript/lib",
+        "tailwindCSS.experimental.classRegex": [
+          ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+        ]
+      }
+    }
+  },
+
+  // Run as non-root so file permissions match the host user
+  "remoteUser": "node",
+
+  "postCreateCommand": "npm install",
+  "postStartCommand": "echo 'SoundScope dev container ready. Run: npm run dev'",
+
+  "forwardPorts": [],
+
+  "runArgs": [
+    // Required for Electron's sandbox to work inside Docker
+    "--cap-add=SYS_PTRACE",
+    "--security-opt", "seccomp=unconfined"
+  ]
+}
