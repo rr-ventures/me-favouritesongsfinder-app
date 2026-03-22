@@ -24,7 +24,7 @@ process.env.VITE_PUBLIC = VITE_DEV_SERVER_URL
 
 if (os.release().startsWith('6.1')) app.disableHardwareAcceleration()
 
-if (process.platform === 'win32') app.setAppUserModelId('com.soundscope.app')
+if (process.platform === 'win32') app.setAppUserModelId('com.mixingsongfinder.app')
 
 if (!app.requestSingleInstanceLock()) {
   app.quit()
@@ -54,7 +54,7 @@ function updatePlayerViewBounds() {
 
 async function createWindow() {
   win = new BrowserWindow({
-    title: 'SoundScope',
+    title: 'MixingSongFinder',
     icon: path.join(process.env.VITE_PUBLIC!, 'favicon.ico'),
     width: 1280,
     height: 800,

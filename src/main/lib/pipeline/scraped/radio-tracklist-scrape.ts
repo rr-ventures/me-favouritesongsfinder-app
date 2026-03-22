@@ -47,7 +47,7 @@ export class RadioTracklistScrapeStep extends BaseStep {
       try {
         const res = await fetch(show.url, {
           headers: {
-            'User-Agent': 'Mozilla/5.0 (compatible; SoundScope/1.0 music research)',
+            'User-Agent': 'Mozilla/5.0 (compatible; MixingSongFinder/1.0 music research)',
             Accept: 'text/html',
           },
         })

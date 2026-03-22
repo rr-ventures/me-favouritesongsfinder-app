@@ -50,7 +50,7 @@ export class MusicbrainzMetadataStep extends BaseStep {
     }
 
     const email = await getApiKey('musicbrainz_email')
-    const userAgent = `SoundScope/1.0.0 (${email})`
+    const userAgent = `MixingSongFinder/1.0.0 (${email})`
     const artists = getAllArtists(db, options.limit ?? 100)  // Default limit due to 1 req/sec
 
     yield this.log('info', `Enriching ${artists.length} artists via MusicBrainz (ETA: ~${Math.ceil(artists.length / 60)} min)...`)

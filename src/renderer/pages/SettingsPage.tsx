@@ -55,7 +55,7 @@ export default function SettingsPage() {
                 <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
               </svg>
               <div>
-                <div className="font-semibold text-text-primary text-sm mb-1">Welcome to SoundScope!</div>
+                <div className="font-semibold text-text-primary text-sm mb-1">Welcome to MixingSongFinder!</div>
                 <p className="text-text-secondary text-sm leading-relaxed">
                   Start by adding a Last.fm API key (free) and a few seed artists below.
                   Check <code className="text-accent-light bg-bg-surface px-1 rounded">BACKLOG-homework.md</code> in the project root for a template to fill in your full taste profile.

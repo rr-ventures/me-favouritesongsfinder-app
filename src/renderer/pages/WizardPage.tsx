@@ -100,7 +100,7 @@ export default function WizardPage() {
               <circle cx="18" cy="16" r="3" />
             </svg>
           </div>
-          <span className="font-bold text-sm" style={{ color: 'var(--text-secondary)', letterSpacing: '-0.01em' }}>SoundScope</span>
+          <span className="font-bold text-sm" style={{ color: 'var(--text-secondary)', letterSpacing: '-0.01em' }}>MixingSongFinder</span>
         </div>
 
         {/* Step progress (hidden on step 1) */}

@@ -54,7 +54,7 @@ export class RedditMiningStep extends BaseStep {
         await limiter.wait()
         const searchUrl = `https://www.reddit.com/r/${subreddit}/search.json?q=recommendation+suggest&sort=relevance&t=year&limit=25`
         const res = await fetch(searchUrl, {
-          headers: { 'User-Agent': 'SoundScope/1.0.0 (music discovery app)' },
+          headers: { 'User-Agent': 'MixingSongFinder/1.0.0 (music discovery app)' },
         })
 
         if (res.status === 429) {
@@ -82,7 +82,7 @@ export class RedditMiningStep extends BaseStep {
           try {
             // Fetch thread with comments
             const threadRes = await fetch(`https://www.reddit.com${post.data.permalink}.json?limit=50`, {
-              headers: { 'User-Agent': 'SoundScope/1.0.0' },
+              headers: { 'User-Agent': 'MixingSongFinder/1.0.0' },
             })
             if (!threadRes.ok) continue
 

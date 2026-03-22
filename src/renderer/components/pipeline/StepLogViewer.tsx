@@ -66,12 +66,12 @@ function exportLogs(logs: PipelineEvent[], stepName: string) {
     (e.elapsedMs !== undefined ? ` (t+${(e.elapsedMs / 1000).toFixed(1)}s)` : '') +
     (e.data && e.type !== 'progress' ? ` | ${JSON.stringify(e.data)}` : '')
   )
-  const text = `# SoundScope Pipeline Log — ${stepName}\n# Exported: ${new Date().toISOString()}\n\n${lines.join('\n')}`
+  const text = `# MixingSongFinder Pipeline Log — ${stepName}\n# Exported: ${new Date().toISOString()}\n\n${lines.join('\n')}`
   const blob = new Blob([text], { type: 'text/plain' })
   const url = URL.createObjectURL(blob)
   const a = document.createElement('a')
   a.href = url
-  a.download = `soundscope-${stepName}-${Date.now()}.txt`
+  a.download = `mixingsongfinder-${stepName}-${Date.now()}.txt`
   a.click()
   URL.revokeObjectURL(url)
 }

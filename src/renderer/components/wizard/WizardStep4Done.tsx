@@ -69,7 +69,7 @@ export default function WizardStep4Done({ seedArtistCount, savedKeyCount, onBack
         You're all set!
       </h2>
       <p className="text-sm mb-8" style={{ color: 'var(--text-secondary)' }}>
-        SoundScope is ready to discover music for you.
+        MixingSongFinder is ready to discover music for you.
       </p>
 
       {/* Summary */}

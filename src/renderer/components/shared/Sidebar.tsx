@@ -147,7 +147,7 @@ export default function Sidebar() {
             <MusicNoteIcon size={18} />
           </div>
           <div>
-            <div className="font-bold text-white text-sm tracking-tight leading-none">SoundScope</div>
+            <div className="font-bold text-white text-sm tracking-tight leading-none">MixingSongFinder</div>
             <div className="text-2xs font-medium mt-0.5" style={{ color: 'var(--text-muted)', letterSpacing: '0.06em' }}>MUSIC DISCOVERY</div>
           </div>
         </div>

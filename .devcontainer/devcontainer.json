@@ -1,5 +1,5 @@
 {
-  "name": "SoundScope",
+  "name": "MixingSongFinder",
   "build": {
     "dockerfile": "Dockerfile",
     "context": ".."

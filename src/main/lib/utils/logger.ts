@@ -18,7 +18,7 @@ export function log(level: LogLevel, message: string, data?: unknown): LogEntry 
   }
 
   if (isDev || level === 'error' || level === 'warn') {
-    const prefix = `[SoundScope][${level.toUpperCase()}]`
+    const prefix = `[MixingSongFinder][${level.toUpperCase()}]`
     if (level === 'error') {
       console.error(prefix, message, data ?? '')
     } else if (level === 'warn') {

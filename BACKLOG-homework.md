@@ -1,4 +1,4 @@
-# SoundScope — Quick Start + Homework Sheet
+# MixingSongFinder — Quick Start + Homework Sheet
 
 ## How to launch the app
 
@@ -127,4 +127,4 @@ If you have a BPM preference (leave blank to include all).
 
 ---
 
-_This file is read by SoundScope to pre-populate your taste profile. It's optional — you can also configure everything through the Settings UI._
+_This file is read by MixingSongFinder to pre-populate your taste profile. It's optional — you can also configure everything through the Settings UI._

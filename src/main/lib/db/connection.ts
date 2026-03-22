@@ -8,7 +8,7 @@ let db: Database.Database | null = null
 
 function getDbPath(): string {
   const userDataPath = app.getPath('userData')
-  return path.join(userDataPath, 'soundscope.db')
+  return path.join(userDataPath, 'mixingsongfinder.db')
 }
 
 function getSchemaPath(): string {

@@ -39,7 +39,7 @@ let storeInstance: Awaited<ReturnType<typeof createStore>> | null = null
 async function createStore() {
   const { default: Store } = await import('electron-store')
   return new Store<StoreSchema>({
-    name: 'soundscope-settings',
+    name: 'mixingsongfinder-settings',
     defaults: {
       apiKeys: {},
       preferences: DEFAULT_PREFS,

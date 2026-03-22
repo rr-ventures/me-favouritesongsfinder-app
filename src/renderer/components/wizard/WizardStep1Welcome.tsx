@@ -36,7 +36,7 @@ export default function WizardStep1Welcome({ onNext }: Props) {
             backgroundClip: 'text',
           }}
         >
-          SoundScope
+          MixingSongFinder
         </span>
       </h1>
 

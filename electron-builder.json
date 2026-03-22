@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json",
-  "appId": "com.soundscope.app",
-  "productName": "SoundScope",
+  "appId": "com.mixingsongfinder.app",
+  "productName": "MixingSongFinder",
   "asar": true,
   "directories": {
     "output": "release/${version}"

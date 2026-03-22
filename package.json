@@ -1,9 +1,9 @@
 {
-  "name": "soundscope",
+  "name": "mixingsongfinder",
   "version": "1.0.0",
   "main": "dist-electron/main/index.js",
   "description": "Personal desktop music discovery app — Electron + React + SQLite",
-  "author": "SoundScope",
+  "author": "MixingSongFinder",
   "license": "MIT",
   "private": true,
   "type": "module",

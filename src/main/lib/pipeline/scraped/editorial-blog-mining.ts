@@ -70,7 +70,7 @@ export class EditorialBlogMiningStep extends BaseStep {
 
       try {
         const res = await fetch(blog.url, {
-          headers: { 'User-Agent': 'Mozilla/5.0 (compatible; SoundScope/1.0 music research bot)' },
+          headers: { 'User-Agent': 'Mozilla/5.0 (compatible; MixingSongFinder/1.0 music research bot)' },
         })
 
         if (res.status === 403 || res.status === 429) {

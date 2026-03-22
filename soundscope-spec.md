@@ -1,4 +1,4 @@
-# SoundScope — Complete Specification
+# MixingSongFinder — Complete Specification
 # Reference document. Read relevant sections as needed, not all at once.
 
 ---
@@ -23,7 +23,7 @@
 ## 1. Project Structure
 
 ```
-soundscope/
+mixingsongfinder/
 ├── electron/                          # Electron main process (electron-vite convention)
 │   ├── main.ts                        # Entry: window creation, IPC registration
 │   └── preload.ts                     # IPC bridge (contextBridge.exposeInMainWorld)
@@ -177,7 +177,7 @@ soundscope/
 │           └── globals.css            # Tailwind directives + CSS custom properties
 │
 ├── .cursorrules
-├── .soundscope-spec.md                # This file
+├── .mixingsongfinder-spec.md                # This file
 ├── .env.example
 ├── BACKLOG.md
 ├── package.json

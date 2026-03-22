@@ -16,7 +16,7 @@ async function testApiKey(keyName: string, value: string): Promise<{ ok: boolean
       case 'musicbrainz_email': {
         // MusicBrainz just needs a valid email in User-Agent, test with a lightweight lookup
         const res = await fetch('https://musicbrainz.org/ws/2/artist?query=bonobo&limit=1&fmt=json', {
-          headers: { 'User-Agent': `SoundScope/1.0.0 (${value})` },
+          headers: { 'User-Agent': `MixingSongFinder/1.0.0 (${value})` },
         })
         return res.ok ? { ok: true, message: 'Connected' } : { ok: false, message: `HTTP ${res.status}` }
       }

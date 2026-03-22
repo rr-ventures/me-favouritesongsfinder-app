@@ -12,7 +12,7 @@ async function getStore(): Promise<InstanceType<typeof ElectronStore<Settings>>>
   if (!store) {
     const StoreModule = await import('electron-store')
     const Store = StoreModule.default as typeof ElectronStore
-    store = new Store<Settings>({ name: 'soundscope-settings' }) as InstanceType<typeof ElectronStore<Settings>>
+    store = new Store<Settings>({ name: 'mixingsongfinder-settings' }) as InstanceType<typeof ElectronStore<Settings>>
   }
   return store
 }

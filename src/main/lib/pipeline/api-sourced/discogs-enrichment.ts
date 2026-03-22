@@ -47,7 +47,7 @@ export class DiscogsEnrichmentStep extends BaseStep {
     }
 
     const token = await getApiKey('discogs_token')
-    const headers = { Authorization: `Discogs token=${token}`, 'User-Agent': 'SoundScope/1.0.0' }
+    const headers = { Authorization: `Discogs token=${token}`, 'User-Agent': 'MixingSongFinder/1.0.0' }
     const artists = getAllArtists(db, options.limit ?? 200)
 
     yield this.log('info', `Enriching ${artists.length} artists via Discogs...`)

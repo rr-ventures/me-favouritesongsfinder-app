@@ -1,4 +1,4 @@
-# Dev Container Setup — SoundScope
+# Dev Container Setup — MixingSongFinder
 
 ## What's inside
 
