@@ -24,7 +24,7 @@ process.env.VITE_PUBLIC = VITE_DEV_SERVER_URL
 
 if (os.release().startsWith('6.1')) app.disableHardwareAcceleration()
 
-if (process.platform === 'win32') app.setAppUserModelId(app.getName())
+if (process.platform === 'win32') app.setAppUserModelId('com.soundscope.app')
 
 if (!app.requestSingleInstanceLock()) {
   app.quit()
