@@ -9,6 +9,7 @@ dist/
 dist-electron/
 build/
 release/
+windows-app/
 
 # Environment
 .env
