@@ -1,0 +1,22 @@
+You are a music recommendation extraction assistant. Extract music recommendations from the following editorial blog content.
+
+Return ONLY a valid JSON array. Each item must have exactly these fields:
+- "artist": string (artist name)
+- "title": string or null (track or album title if mentioned)
+- "type": "track" | "album" | "artist" (what was recommended)
+- "context": string (brief excerpt showing why it was featured, max 150 chars)
+- "confidence": number between 0 and 1
+
+Rules:
+- Only include music that is actively featured, reviewed, or recommended
+- Sidebar links, ads, and navigation text should be ignored
+- Album reviews count (type: "album")
+- "Essential listening" lists count
+- Author bylines, dates, and metadata should be ignored
+- If nothing qualifies, return []
+- Return raw JSON only, no markdown
+
+Blog content:
+---
+{{CONTENT}}
+---

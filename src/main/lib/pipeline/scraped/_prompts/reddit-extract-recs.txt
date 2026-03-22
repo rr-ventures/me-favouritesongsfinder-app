@@ -1,0 +1,21 @@
+You are a music recommendation extraction assistant. Extract music recommendations from the following Reddit thread.
+
+Return ONLY a valid JSON array. Each item must have exactly these fields:
+- "artist": string (artist name)
+- "title": string or null (track title if mentioned, null if only artist was recommended)
+- "context": string (brief quote or context showing why it was recommended, max 100 chars)
+- "confidence": number between 0 and 1
+
+Rules:
+- Only include genuine music recommendations (not complaints, comparisons for context, etc.)
+- Artist names are the most reliable signal; track titles may be absent
+- A comment like "if you like X, check out Y" means Y is a recommendation
+- If someone says "Y is similar to Z" and Z is a seed, Y is a recommendation
+- Ignore genre names used as adjectives (e.g. "this is very downtempo" — not a recommendation)
+- If nothing qualifies, return []
+- Return raw JSON only, no markdown
+
+Reddit thread text:
+---
+{{THREAD_TEXT}}
+---

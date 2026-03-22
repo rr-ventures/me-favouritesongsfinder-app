@@ -1,0 +1,27 @@
+[
+  {
+    "label_name": "Ninja Tune",
+    "discogs_label_id": 2635,
+    "artists_on_label": ["Bonobo", "Blockhead", "Amon Tobin", "Cinematic Orchestra", "Mr. Scruff", "Roots Manuva", "Portico Quartet"]
+  },
+  {
+    "label_name": "Tru Thoughts",
+    "discogs_label_id": 4768,
+    "artists_on_label": ["Quantic", "Nostalgia 77", "Atjazz", "Lack of Afro", "Alice Russell", "Reel People"]
+  },
+  {
+    "label_name": "Stones Throw",
+    "discogs_label_id": 5723,
+    "artists_on_label": ["Mndsgn", "Knxwledge", "Dam-Funk", "Charizma & Peanut Butter Wolf", "Madlib", "Oh No"]
+  },
+  {
+    "label_name": "Brainfeeder",
+    "discogs_label_id": 153476,
+    "artists_on_label": ["Flying Lotus", "Teebs", "Thundercat", "Tokimonsta", "Daedelus", "Samiyam"]
+  },
+  {
+    "label_name": "Warp",
+    "discogs_label_id": 23528,
+    "artists_on_label": ["Flying Lotus", "Boards of Canada", "Aphex Twin", "Squarepusher", "Grizzly Bear", "Clark"]
+  }
+]

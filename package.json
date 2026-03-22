@@ -1,0 +1,51 @@
+{
+  "name": "soundscope",
+  "version": "1.0.0",
+  "main": "dist-electron/main/index.js",
+  "description": "Personal desktop music discovery app — Electron + React + SQLite",
+  "author": "SoundScope",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "debug": {
+    "env": {
+      "VITE_DEV_SERVER_URL": "http://127.0.0.1:7777/"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && electron-builder",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.36.3",
+    "@google/generative-ai": "^0.21.0",
+    "better-sqlite3": "^12.8.0",
+    "cheerio": "^1.0.0",
+    "electron-store": "^10.0.0",
+    "electron-updater": "^6.3.9",
+    "fastest-levenshtein": "^1.0.16",
+    "node-fetch": "^3.3.2",
+    "playwright": "^1.50.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.2.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node-fetch": "^2.6.12",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "electron": "^33.2.0",
+    "electron-builder": "^24.13.3",
+    "postcss": "^8.4.49",
+    "postcss-import": "^16.1.0",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.4.2",
+    "vite": "^5.4.11",
+    "vite-plugin-electron": "^0.29.0",
+    "vite-plugin-electron-renderer": "^0.14.6"
+  }
+}

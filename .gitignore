@@ -1,2 +1,24 @@
 # Local devcontainer overrides (X11, secrets) — do not commit
 .devcontainer/devcontainer.local.json
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+dist-electron/
+build/
+release/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db

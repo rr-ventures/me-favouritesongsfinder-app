@@ -1,0 +1,22 @@
+[
+  { "name": "Bonobo", "name_normalized": "bonobo", "similarity_score": 1.0, "lastfm_url": "https://www.last.fm/music/Bonobo", "is_seed": 1 },
+  { "name": "Nujabes", "name_normalized": "nujabes", "similarity_score": 1.0, "lastfm_url": "https://www.last.fm/music/Nujabes", "is_seed": 1 },
+  { "name": "Four Tet", "name_normalized": "four tet", "similarity_score": 1.0, "lastfm_url": "https://www.last.fm/music/Four+Tet", "is_seed": 1 },
+  { "name": "Tycho", "name_normalized": "tycho", "similarity_score": 0.92, "lastfm_url": "https://www.last.fm/music/Tycho", "is_seed": 0 },
+  { "name": "Wun Two", "name_normalized": "wun two", "similarity_score": 0.91, "lastfm_url": "https://www.last.fm/music/Wun+Two", "is_seed": 0 },
+  { "name": "Idealism", "name_normalized": "idealism", "similarity_score": 0.90, "lastfm_url": "https://www.last.fm/music/Idealism", "is_seed": 0 },
+  { "name": "Mndsgn", "name_normalized": "mndsgn", "similarity_score": 0.89, "lastfm_url": "https://www.last.fm/music/Mndsgn", "is_seed": 0 },
+  { "name": "Skinshape", "name_normalized": "skinshape", "similarity_score": 0.88, "lastfm_url": "https://www.last.fm/music/Skinshape", "is_seed": 0 },
+  { "name": "Fakear", "name_normalized": "fakear", "similarity_score": 0.87, "lastfm_url": "https://www.last.fm/music/Fakear", "is_seed": 0 },
+  { "name": "Burial", "name_normalized": "burial", "similarity_score": 0.86, "lastfm_url": "https://www.last.fm/music/Burial", "is_seed": 0 },
+  { "name": "J Dilla", "name_normalized": "j dilla", "similarity_score": 0.85, "lastfm_url": "https://www.last.fm/music/J+Dilla", "is_seed": 0 },
+  { "name": "Flying Lotus", "name_normalized": "flying lotus", "similarity_score": 0.84, "lastfm_url": "https://www.last.fm/music/Flying+Lotus", "is_seed": 0 },
+  { "name": "Lone", "name_normalized": "lone", "similarity_score": 0.83, "lastfm_url": "https://www.last.fm/music/Lone", "is_seed": 0 },
+  { "name": "Teebs", "name_normalized": "teebs", "similarity_score": 0.82, "lastfm_url": "https://www.last.fm/music/Teebs", "is_seed": 0 },
+  { "name": "Knxwledge", "name_normalized": "knxwledge", "similarity_score": 0.81, "lastfm_url": "https://www.last.fm/music/Knxwledge", "is_seed": 0 },
+  { "name": "Little Dragon", "name_normalized": "little dragon", "similarity_score": 0.80, "lastfm_url": "https://www.last.fm/music/Little+Dragon", "is_seed": 0 },
+  { "name": "Stumbleine", "name_normalized": "stumbleine", "similarity_score": 0.79, "lastfm_url": "https://www.last.fm/music/Stumbleine", "is_seed": 0 },
+  { "name": "Clams Casino", "name_normalized": "clams casino", "similarity_score": 0.78, "lastfm_url": "https://www.last.fm/music/Clams+Casino", "is_seed": 0 },
+  { "name": "Rone", "name_normalized": "rone", "similarity_score": 0.77, "lastfm_url": "https://www.last.fm/music/Rone", "is_seed": 0 },
+  { "name": "Zero 7", "name_normalized": "zero 7", "similarity_score": 0.76, "lastfm_url": "https://www.last.fm/music/Zero+7", "is_seed": 0 }
+]

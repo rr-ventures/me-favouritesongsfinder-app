@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Bonobo",
+    "mbid": "9a709693-b4f8-4da9-8cc1-038c911a61be",
+    "labels": [{ "name": "Ninja Tune", "mbid": "5df458de-e49f-4c32-9a0c-6ed55f07cf32" }],
+    "tags": ["downtempo", "trip-hop", "electronic", "nu jazz", "british"]
+  },
+  {
+    "name": "Four Tet",
+    "mbid": "b6b2bb8d-54a9-491f-9607-7b546023b433",
+    "labels": [{ "name": "Domino", "mbid": "bf8f6f2b-df3f-4082-866a-5c9a2d0e8f62" }],
+    "tags": ["electronic", "idm", "ambient", "folktronica", "british"]
+  },
+  {
+    "name": "Burial",
+    "mbid": "e5dc1561-3e3e-4d3e-b4c6-2b4dc19b27d6",
+    "labels": [{ "name": "Hyperdub", "mbid": "5c2a4a8b-e4f3-4b28-b3fa-4a6b1c3d0b31" }],
+    "tags": ["dubstep", "electronic", "uk garage", "post-dubstep", "british"]
+  },
+  {
+    "name": "Flying Lotus",
+    "mbid": "31521016-e5a4-4bcd-8e90-7f48f8ed77c5",
+    "labels": [{ "name": "Warp", "mbid": "46f0f4cd-8aab-4b33-b698-f459faf64190" }],
+    "tags": ["electronic", "hip hop", "jazz fusion", "experimental", "american"]
+  },
+  {
+    "name": "Nujabes",
+    "mbid": "c68d25c5-3aff-4e54-af83-e66e0ddb2a08",
+    "labels": [{ "name": "Hydeout Productions", "mbid": null }],
+    "tags": ["lo-fi hip hop", "jazz", "instrumental hip hop", "japanese"]
+  },
+  {
+    "name": "Lone",
+    "mbid": "9a86c3eb-b0a2-4e58-bfa5-eb3caae11f34",
+    "labels": [{ "name": "R&S Records", "mbid": null }],
+    "tags": ["electronic", "rave", "ambient", "uk"]
+  },
+  {
+    "name": "Teebs",
+    "mbid": "f42c0b15-d5f5-4f54-9e83-d3c52e2dc082",
+    "labels": [{ "name": "Brainfeeder", "mbid": "6e2f7cc5-1ef6-4283-a7ae-0cfc9a17acca" }],
+    "tags": ["beat music", "lo-fi", "electronic", "ambient", "american"]
+  },
+  {
+    "name": "Tycho",
+    "mbid": "b9c3a9fc-e253-4bef-8b80-f7b9b7d57a23",
+    "labels": [{ "name": "Ghostly International", "mbid": "8f4a22fe-6c73-4b6a-acf1-dd74a5f20be8" }],
+    "tags": ["chillwave", "electronic", "ambient", "instrumental"]
+  },
+  {
+    "name": "Mndsgn",
+    "mbid": "b9a72e21-4e5d-4c8a-9f3d-5d9c84f4b1c7",
+    "labels": [{ "name": "Stones Throw", "mbid": "98a1e6c6-ef75-4e96-87d1-fd21c93c75c3" }],
+    "tags": ["beat music", "soul", "r&b", "downtempo"]
+  },
+  {
+    "name": "Little Dragon",
+    "mbid": "3a50e01b-8e34-4e84-baf0-68e7d3a18d54",
+    "labels": [{ "name": "Because Music", "mbid": null }],
+    "tags": ["electropop", "indie pop", "synth pop", "swedish"]
+  }
+]

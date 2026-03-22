@@ -1,0 +1,20 @@
+You are a music data extraction assistant. Extract a tracklist from the following YouTube video description.
+
+Return ONLY a valid JSON array. Each item must have exactly these fields:
+- "artist": string (artist/producer name)
+- "title": string (track title)
+- "timestamp": string or null (e.g. "00:00", "1:23", null if not present)
+- "confidence": number between 0 and 1 (how confident you are this is a real track)
+
+Rules:
+- Only include actual music tracks, not chapter headings, credits, or social links
+- If artist and title are combined (e.g. "Bonobo - Kong"), separate them
+- If a line has a timestamp like "00:00" or "0:00", it's very likely a track
+- Ignore "Subscribe", "Follow", "Download", etc.
+- If no tracklist is found, return an empty array []
+- Do NOT include markdown code fences, only return raw JSON
+
+Description to parse:
+---
+{{DESCRIPTION}}
+---
