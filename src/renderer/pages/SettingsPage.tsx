@@ -6,9 +6,10 @@ import ApiKeyManager from '../components/settings/ApiKeyManager'
 import SeedManager from '../components/settings/SeedManager'
 import TasteDescriptors from '../components/settings/TasteDescriptors'
 import ChannelManager from '../components/settings/ChannelManager'
+import HomeworkImport from '../components/settings/HomeworkImport'
 import LoadingSpinner from '../components/shared/LoadingSpinner'
 
-type Section = 'keys' | 'seeds' | 'descriptors' | 'channels' | 'preferences'
+type Section = 'keys' | 'seeds' | 'descriptors' | 'channels' | 'preferences' | 'import'
 
 export default function SettingsPage() {
   const [searchParams] = useSearchParams()
@@ -24,6 +25,7 @@ export default function SettingsPage() {
     { id: 'descriptors', label: 'Taste Descriptors' },
     { id: 'channels', label: 'Source Channels' },
     { id: 'preferences', label: 'Preferences' },
+    { id: 'import', label: 'Import' },
   ]
 
   return (
@@ -58,7 +60,8 @@ export default function SettingsPage() {
                 <div className="font-semibold text-text-primary text-sm mb-1">Welcome to MixingSongFinder!</div>
                 <p className="text-text-secondary text-sm leading-relaxed">
                   Start by adding a Last.fm API key (free) and a few seed artists below.
-                  Check <code className="text-accent-light bg-bg-surface px-1 rounded">BACKLOG-homework.md</code> in the project root for a template to fill in your full taste profile.
+                  You can also fill in <code className="text-accent-light bg-bg-surface px-1 rounded">BACKLOG-homework.md</code> and
+                  use the <button onClick={() => setActiveSection('import')} className="text-accent-light underline underline-offset-2 hover:text-accent transition-colors">Import</button> tab to load your full taste profile at once.
                 </p>
               </div>
             </div>
@@ -158,6 +161,19 @@ export default function SettingsPage() {
                     onChange={(v) => savePreference('maxCostPerRunUsd', v)}
                   />
                 </div>
+              </div>
+            )}
+
+            {activeSection === 'import' && (
+              <div>
+                <div className="mb-5">
+                  <h2 className="text-lg font-semibold text-text-primary">Import</h2>
+                  <p className="text-text-secondary text-sm mt-1">
+                    Bulk-import your taste profile from a homework sheet, or add tracks from CSV, JSON, or text files.
+                    Imported tracks become seeds and will be scored on the next pipeline run.
+                  </p>
+                </div>
+                <HomeworkImport />
               </div>
             )}
           </>

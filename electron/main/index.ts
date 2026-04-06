@@ -6,6 +6,7 @@ import { registerSettingsHandlers } from '../../src/main/ipc/settings.js'
 import { registerDatabaseHandlers } from '../../src/main/ipc/database.js'
 import { registerPipelineHandlers } from '../../src/main/ipc/pipeline.js'
 import { registerPlaybackHandlers, setPlayerView } from '../../src/main/ipc/playback.js'
+import { registerHomeworkHandlers } from '../../src/main/ipc/homework.js'
 import { getDb, closeDb } from '../../src/main/lib/db/connection.js'
 import { registerAllSteps } from '../../src/main/lib/pipeline/step-registry.js'
 import { orchestrator } from '../../src/main/lib/pipeline/orchestrator.js'
@@ -105,6 +106,7 @@ async function registerIpcHandlers() {
   registerSettingsHandlers()
   registerDatabaseHandlers()
   registerPlaybackHandlers()
+  registerHomeworkHandlers()
 
   // Initialize pipeline steps, then register pipeline IPC
   try {
